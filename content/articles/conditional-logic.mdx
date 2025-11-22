@@ -1,0 +1,61 @@
+---
+title: "Conditional Logic & Dependencies"
+description: "Learn how to show or hide options based on customer selections using conditional logic in Optionify."
+category: "advanced"
+lastUpdated: "2024-01-15"
+tags: ["conditional logic", "dependencies", "advanced"]
+featured: false
+order: 15
+---
+
+Conditional logic allows you to show or hide options based on previous customer selections, creating dynamic and intelligent product pages.
+
+## What is Conditional Logic?
+
+Display options only when specific conditions are met:
+
+```
+If: Customer selects "Gift Wrapping: Yes"
+Then: Show "Gift Message" textarea
+```
+
+
+## Common Use Cases
+
+### Gift Wrapping Flow
+
+```
+1. Switch: "Add Gift Wrapping?" (+$5)
+   ↓ If YES
+2. Textarea: "Gift Message"
+3. Dropdown: "Gift Wrap Style"
+```
+
+### Custom Design Flow
+
+```
+1. Radio: "Design Type"
+   - Standard
+   - Custom (+$50)
+   ↓ If Custom selected
+2. Image Upload: "Upload Your Design"
+3. Textarea: "Design Notes"
+```
+
+## Configuration
+
+Set up dependencies in the option builder:
+
+```
+Show this option when:
+- "Gift Wrapping" is "Yes"
+- "Custom Design" is selected
+```
+
+\![Conditional logic settings](/images/conditional-logic/conditions-setup.png)
+
+
+## Related
+
+- [Text Options](/articles/text-options)
+- [Switch Options](/articles/switch-options)

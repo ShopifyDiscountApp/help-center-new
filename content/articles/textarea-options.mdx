@@ -1,0 +1,426 @@
+---
+title: "How to Use Textarea Options"
+description: "Learn how to use multi-line textarea options in Optionify for longer messages, special instructions, and detailed customer input."
+category: "option-types"
+lastUpdated: "2024-01-15"
+tags: ["textarea", "multi-line", "messages", "option types"]
+featured: false
+order: 5
+---
+
+Textarea options provide multi-line text input fields perfect for collecting longer messages, detailed instructions, and customer notes that don't fit in a single-line text field.
+
+## What Are Textarea Options?
+
+Textarea options create a resizable, multi-line text box where customers can enter paragraphs of text. Ideal for:
+
+- Long gift messages or cards
+- Detailed special instructions
+- Custom design descriptions
+- Shipping notes and preferences
+- Customer requirements or specifications
+
+\![Textarea option on product page](/images/textarea-options/textarea-example.png)
+*A textarea option for detailed gift messages*
+
+## When to Use Textarea vs Text
+
+| Use **Text** Option | Use **Textarea** Option |
+|---------------------|------------------------|
+| Names, initials | Paragraphs, multiple sentences |
+| Short phrases (< 50 chars) | Long messages (> 50 chars) |
+| Engraving text | Detailed instructions |
+| Product codes | Design descriptions |
+| Single-line input | Multi-line input |
+
+
+## Real-World Use Cases
+
+### 1. Gift Messages & Cards
+
+**Birthday Card Message**
+```
+Label: "Birthday Card Message"
+Placeholder: "Write your birthday wishes here..."
+Max Length: 500 characters
+```
+
+**Wedding Gift Note**
+```
+Label: "Message for the Bride & Groom"
+Placeholder: "Share your congratulations and well wishes..."
+Max Length: 1000 characters
+```
+
+### 2. Special Instructions
+
+**Delivery Instructions**
+```
+Label: "Special Delivery Instructions"
+Placeholder: "e.g., Leave package at back door, ring doorbell twice..."
+Max Length: 300 characters
+```
+
+**Custom Requirements**
+```
+Label: "Additional Requirements or Preferences"
+Placeholder: "Tell us anything else we should know..."
+Max Length: 500 characters
+```
+
+### 3. Design Specifications
+
+**Custom Design Brief**
+```
+Label: "Describe Your Custom Design"
+Placeholder: "Include colors, style preferences, inspiration..."
+Max Length: 2000 characters
+```
+
+\![Textarea for design specifications](/images/textarea-options/design-brief-textarea.png)
+*Collect detailed design requirements with a textarea*
+
+## Creating a Textarea Option
+
+### Step 1: Basic Configuration
+
+```
+Option Label: "Gift Card Message"
+Internal Name: "gift-card-message"
+Help Text: "Write a personalized message for your gift recipient"
+Option Type: Textarea
+```
+
+### Step 2: Textarea-Specific Settings
+
+#### Rows (Height)
+
+Control the initial height:
+
+```
+Rows: 4 (Default - about 4 lines)
+Rows: 6 (Taller - about 6 lines)
+Rows: 10 (Very tall - for long content)
+```
+
+**Recommended heights:**
+- Gift messages: 4-6 rows
+- Instructions: 3-4 rows
+- Design briefs: 8-10 rows
+
+\![Different textarea heights](/images/textarea-options/textarea-heights.png)
+*Choose the right height for your use case*
+
+#### Character Limit
+
+Always set a maximum:
+
+```
+Max Characters: 500 (Gift messages)
+Max Characters: 1000 (Detailed notes)
+Max Characters: 2000 (Design descriptions)
+```
+
+
+#### Character Counter
+
+Show remaining characters:
+
+```
+Show Counter: Yes
+Update: Real-time (as customer types)
+Position: Below textarea
+```
+
+### Step 3: Validation & Requirements
+
+```
+Required: No (for optional messages)
+Required: Yes (for critical specifications)
+
+Minimum Characters: 10 (ensure meaningful input)
+Maximum Characters: 500
+```
+
+### Step 4: Placeholder Examples
+
+Good placeholders guide customers:
+
+```
+✅ "e.g., Dear Sarah, Happy 30th Birthday! We hope this
+    year brings you joy and adventure. Love, Mom & Dad"
+
+✅ "Describe your ideal design including colors, style,
+    and any specific elements you want included..."
+
+❌ "Enter your message"
+❌ "Type here"
+```
+
+## Best Practices
+
+### 1. Set Appropriate Limits
+
+Match limits to use case:
+
+```
+Short notes: 200-300 characters
+Gift messages: 400-600 characters
+Instructions: 300-500 characters
+Detailed specs: 1000-2000 characters
+```
+
+### 2. Provide Clear Guidance
+
+```
+Help Text: "Your message will be printed on a gift card
+           included with your order. Maximum 500 characters."
+```
+
+### 3. Show Examples
+
+Include a sample message:
+
+```
+Placeholder: "Example: Dear Mom, Thank you for everything
+             you do. This gift is just a small token of
+             my appreciation. Love always, Sarah"
+```
+
+
+### 4. Consider Formatting
+
+Decide if you'll preserve:
+- Line breaks
+- Multiple spaces
+- Special characters
+
+```
+Preserve Formatting: Yes (keeps line breaks)
+Preserve Formatting: No (converts to single paragraph)
+```
+
+### 5. Mobile-Friendly Sizing
+
+Test on mobile devices:
+
+```
+Mobile Rows: 4 (smaller on mobile)
+Desktop Rows: 6 (larger on desktop)
+```
+
+\![Textarea on mobile device](/images/textarea-options/textarea-mobile.png)
+*Ensure textareas work well on mobile screens*
+
+## Advanced Features
+
+### Auto-Resize
+
+Allow textarea to grow as customer types:
+
+```
+Auto-Resize: Yes
+Max Height: 500px
+```
+
+### Word Count
+
+Show word count instead of character count:
+
+```
+Counter Type: Words
+Max Words: 100
+```
+
+### Spell Check
+
+Enable browser spell checking:
+
+```
+Spell Check: Enabled
+```
+
+### Rich Text (Premium)
+
+Some plans support basic formatting:
+
+```
+Bold: Yes
+Italics: Yes
+Line Breaks: Yes
+```
+
+## Styling Options
+
+### Width
+
+```
+Width: Full (100% of container)
+Width: Large (75%)
+Width: Medium (50%)
+```
+
+### Border Style
+
+```
+Border: Standard
+Border: Rounded
+Border: Minimal
+```
+
+### Focus State
+
+Highlight when customer clicks in:
+
+```
+Focus Color: Primary brand color
+Focus Effect: Subtle glow
+```
+
+## Common Use Cases by Industry
+
+### E-commerce Gifts
+
+```
+Option: "Gift Message"
+Rows: 5
+Max Characters: 400
+Required: No
+Placeholder: "Write your personal message..."
+```
+
+### Custom Products
+
+```
+Option: "Design Specifications"
+Rows: 8
+Max Characters: 1500
+Required: Yes
+Placeholder: "Describe colors, size, style..."
+```
+
+### Food & Catering
+
+```
+Option: "Dietary Requirements & Allergies"
+Rows: 4
+Max Characters: 300
+Required: No
+Placeholder: "List any allergies or dietary needs..."
+```
+
+### Event Planning
+
+```
+Option: "Event Details & Special Requests"
+Rows: 6
+Max Characters: 800
+Required: Yes
+Placeholder: "Describe your event, guest count, timing..."
+```
+
+\![Industry-specific textarea examples](/images/textarea-options/industry-examples.png)
+*Textarea options tailored to different industries*
+
+## Integration with Fulfillment
+
+### How Textarea Data Appears
+
+In Shopify orders:
+
+```
+Product: Custom T-Shirt
+Options:
+  - Gift Message: "Happy Birthday John! Hope you love
+                   this custom shirt. Wear it with pride!
+                   Love, Sarah"
+```
+
+### Printing & Display
+
+Consider how you'll use long messages:
+
+- Print on gift cards (set appropriate size limit)
+- Include in packing slips
+- Send to custom manufacturers
+- Display in customer service systems
+
+
+## Troubleshooting
+
+### Text Gets Cut Off
+
+**Problem:** Character limit too low
+**Solution:** Increase max characters or show warning
+
+### Textarea Too Small
+
+**Problem:** Not enough rows
+**Solution:** Increase row count or enable auto-resize
+
+### Formatting Lost
+
+**Problem:** Line breaks disappear
+**Solution:** Enable "Preserve Formatting"
+
+### Mobile Issues
+
+**Problem:** Textarea unusable on phone
+**Solution:** Set appropriate mobile row count
+
+### No Character Counter
+
+**Problem:** Counter not showing
+**Solution:** Enable in settings, check theme compatibility
+
+## Comparison with Other Options
+
+### Textarea vs Text
+
+```
+Textarea: Multi-line, paragraphs
+Text: Single line, short phrases
+```
+
+### Textarea vs Dropdown
+
+```
+Textarea: Free-form input
+Dropdown: Predefined choices
+```
+
+### Textarea vs File Upload
+
+```
+Textarea: Text descriptions
+File Upload: Actual documents/images
+```
+
+## Examples with Conditional Logic
+
+Show textarea based on previous choice:
+
+```
+If customer selects: "Yes, add gift wrapping"
+Then show: "Gift Message" textarea
+```
+
+Learn more: [Conditional Logic Guide](/articles/conditional-logic)
+
+## Related Option Types
+
+- [Text Options](/articles/text-options) - For single-line input
+- [Dropdown Options](/articles/dropdown-options) - For predefined choices
+- [Email Options](/articles/email-options) - For email addresses
+
+## Next Steps
+
+Explore more option types:
+- [Checkbox Options](/articles/checkbox-options) - Multiple selections
+- [Radio Options](/articles/radio-options) - Single choice from list
+- [Image Upload Options](/articles/image-options) - File uploads
+
+
+---
+
+**Questions?** Check our [Troubleshooting Guide](/articles/troubleshooting) or contact support.

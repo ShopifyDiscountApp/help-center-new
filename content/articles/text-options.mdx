@@ -1,0 +1,429 @@
+---
+title: "How to Use Text Options"
+description: "Complete guide to using single-line text input options in Optionify for names, short messages, and custom text personalization."
+category: "option-types"
+lastUpdated: "2024-01-15"
+tags: ["text", "input", "personalization", "option types"]
+featured: false
+order: 4
+---
+
+Text options are the most versatile and commonly used option type in Optionify. They allow customers to enter short, single-line text for personalization, customization, and special requests.
+
+## What Are Text Options?
+
+Text options create a single-line input field where customers can type text. Perfect for:
+
+- Names and initials
+- Short messages (up to ~200 characters)
+- Product codes or references
+- Custom identifiers
+- Single-line instructions
+
+\![Text option example on product page](/images/text-options/text-input-example.png)
+*A text option field for engraving on a jewelry product*
+
+## Real-World Use Cases
+
+### 1. Personalization & Engraving
+
+**Jewelry Engraving**
+```
+Label: "Engraving Text (max 20 characters)"
+Example: "Love Always, Mom"
+```
+
+**Monogramming**
+```
+Label: "Enter Initials (3 letters)"
+Example: "JKL"
+```
+
+### 2. Gift Messages
+
+**Gift Card Message**
+```
+Label: "Gift Message (optional)"
+Example: "Happy Birthday Sarah!"
+```
+
+### 3. Custom References
+
+**Order Reference**
+```
+Label: "PO Number or Reference"
+Example: "PO-2024-001"
+```
+
+
+## Creating a Text Option
+
+### Step 1: Basic Setup
+
+1. Click **Create New Option**
+2. Select **Text** option type
+3. Enter option details:
+
+```
+Option Label: "Engraving Text"
+Internal Name: "engraving-text"
+Help Text: "Enter text for engraving (max 20 characters)"
+```
+
+\![Text option configuration screen](/images/text-options/text-config-screen.png)
+*Configure your text option with labels and help text*
+
+### Step 2: Configure Text Settings
+
+#### Character Limit
+
+**Always set a character limit** to prevent issues:
+
+```
+Enable Character Limit: Yes
+Maximum Characters: 20
+Show Counter: Yes
+```
+
+**Recommended limits by use case:**
+- Engraving: 15-30 characters
+- Initials: 1-5 characters
+- Gift messages: 100-150 characters
+- Names: 30-50 characters
+
+
+#### Placeholder Text
+
+Show customers what format you expect:
+
+```
+Placeholder: "e.g., John & Sarah 2024"
+```
+
+**Good placeholder examples:**
+- ✅ "e.g., Happy Birthday!"
+- ✅ "Enter your initials (ABC)"
+- ✅ "Your name here"
+- ❌ "Text"
+- ❌ "Enter text here"
+
+\![Placeholder text example](/images/text-options/placeholder-example.png)
+*Helpful placeholder text guides customers*
+
+### Step 3: Validation Rules
+
+#### Required vs Optional
+
+**Make it required when:**
+- The product NEEDS this information
+- You can't fulfill without it
+- It's critical to the order
+
+**Make it optional when:**
+- It's a nice-to-have
+- You can proceed without it
+- Not all customers need it
+
+```
+Required: No (for optional features)
+Required: Yes (for critical personalization)
+```
+
+#### Input Validation
+
+**Character Type Restrictions:**
+
+```
+Allow All Characters: Default
+Letters Only: For names, initials
+Numbers Only: For quantities, codes
+Alphanumeric: For mixed inputs
+```
+
+**Pattern Matching (Advanced):**
+
+```
+Pattern: [A-Z]{3}
+Use Case: Three uppercase letters for initials
+```
+
+
+### Step 4: Assignment & Pricing
+
+Assign to relevant products:
+
+```
+Assignment: Tagged Products
+Tags: "engravable", "personalizable"
+```
+
+Add pricing if applicable:
+
+```
+Add Price: Yes
+Price: $10.00
+Price Label: "Engraving Service"
+```
+
+\![Text option with pricing](/images/text-options/text-pricing.png)
+*Add charges for premium personalization services*
+
+## Advanced Text Option Features
+
+### Input Transformation
+
+**Automatic Capitalization:**
+
+```
+Transform: UPPERCASE
+Input: "hello world"
+Stored As: "HELLO WORLD"
+```
+
+**Use cases:**
+- `UPPERCASE`: Initials, codes
+- `lowercase`: Email addresses, usernames
+- `Capitalize Each Word`: Names, titles
+
+### Prefix & Suffix
+
+Add automatic text before or after customer input:
+
+```
+Prefix: "Engraved: "
+Customer enters: "Mom"
+Displays as: "Engraved: Mom"
+```
+
+### Default Values
+
+Pre-fill common choices:
+
+```
+Default Value: "Gift"
+```
+
+Customers can change it, but it saves time for common inputs.
+
+## Best Practices
+
+### 1. Clear Labeling
+
+**Good labels:**
+- ✅ "Engraving Text (max 20 characters)"
+- ✅ "Your Name for Certificate"
+- ✅ "Gift Message (optional)"
+
+**Poor labels:**
+- ❌ "Text 1"
+- ❌ "Enter here"
+- ❌ "Custom"
+
+### 2. Helpful Help Text
+
+Explain what customers should enter:
+
+```
+Help Text: "Enter the exact text you want engraved.
+Check spelling carefully - we engrave exactly as typed."
+```
+
+### 3. Character Limits
+
+Set realistic limits:
+
+```
+Jewelry engraving: 15-25 characters
+Shirt text: 30-50 characters
+Gift messages: 100-200 characters
+```
+
+
+### 4. Examples in Placeholders
+
+Show, don't just tell:
+
+```
+❌ Placeholder: "Enter text"
+✅ Placeholder: "e.g., Sarah & John Est. 2024"
+```
+
+### 5. Validation Messages
+
+Customize error messages:
+
+```
+Error (too long): "Engraving text must be 20 characters or less"
+Error (empty): "Please enter text for engraving"
+```
+
+## Common Mistakes to Avoid
+
+### ❌ No Character Limit
+
+**Problem:** Customer enters 500 characters
+**Solution:** Always set maximum length
+
+### ❌ Unclear Purpose
+
+**Problem:** Label says "Text Option"
+**Solution:** Be specific: "Engraving Text"
+
+### ❌ No Examples
+
+**Problem:** Customers don't know what format to use
+**Solution:** Add placeholder examples
+
+### ❌ Too Restrictive
+
+**Problem:** Blocks common characters like apostrophes
+**Solution:** Allow all characters unless necessary
+
+### ❌ Wrong Option Type
+
+**Problem:** Using text for long messages
+**Solution:** Use Textarea for multi-line input
+
+## Styling & Display
+
+### Input Field Width
+
+Text fields can be sized:
+
+```
+Width: Full (100%)
+Width: Half (50%)
+Width: Small (30%)
+```
+
+**Sizing guidelines:**
+- Initials (3 chars): Small width
+- Names: Medium width
+- Messages: Full width
+
+\![Different text field widths](/images/text-options/field-widths.png)
+*Match field width to expected input length*
+
+### Character Counter
+
+Show remaining characters:
+
+```
+Show Counter: Yes
+Position: Below field
+Format: "15 characters remaining"
+```
+
+### Live Preview
+
+Some themes support live preview:
+
+```
+Enable Preview: Yes
+Preview Format: "Engraved: {input}"
+```
+
+## Integration with Orders
+
+### How Text Appears in Orders
+
+In Shopify order details:
+
+```
+Product: Gold Ring
+Options:
+  - Engraving Text: "Love Always"
+  - Font Style: Script
+```
+
+### Exporting Data
+
+Text option data exports to:
+- Order CSV exports
+- Third-party apps
+- Fulfillment systems
+
+Make sure your fulfillment team knows where to find this data!
+
+
+## Troubleshooting
+
+### Customer Can't Type Special Characters
+
+**Cause:** Too restrictive validation
+**Fix:** Change to "Allow All Characters"
+
+### Character Counter Doesn't Update
+
+**Cause:** Theme incompatibility
+**Fix:** Disable and re-enable in settings, or contact support
+
+### Text Not Appearing in Orders
+
+**Cause:** Customer added to cart before entering text
+**Fix:** Add validation to require text before "Add to Cart"
+
+### Text Gets Cut Off
+
+**Cause:** Character limit too high for product
+**Fix:** Reduce limit to what actually fits
+
+## Examples by Industry
+
+### Jewelry Store
+
+```
+Option: "Engraving Text"
+Limit: 20 characters
+Required: Yes
+Price: $15.00
+Assignment: Tagged "engravable"
+```
+
+### Apparel Store
+
+```
+Option: "Custom Team Name"
+Limit: 30 characters
+Required: No
+Transform: UPPERCASE
+Assignment: Collection "Custom Jerseys"
+```
+
+### Gift Shop
+
+```
+Option: "Gift Card Message"
+Limit: 100 characters
+Required: No
+Placeholder: "e.g., Happy Birthday!"
+Assignment: All Products
+```
+
+### Print Shop
+
+```
+Option: "Custom Text Line 1"
+Limit: 40 characters
+Required: Yes
+Assignment: Tagged "customizable"
+```
+
+## Related Option Types
+
+- **Textarea Options**: For longer, multi-line text → [Learn more](/articles/textarea-options)
+- **Email Options**: For validated email addresses → [Learn more](/articles/email-options)
+- **Number Options**: For numeric input only → [Learn more](/articles/number-options)
+
+## Next Steps
+
+Now that you understand text options:
+
+- Try [Textarea Options](/articles/textarea-options) for longer messages
+- Learn [Conditional Logic](/articles/conditional-logic) to show text fields conditionally
+- Explore [Radio Options](/articles/radio-options) for predefined text choices
+
+
+---
+
+**Need help?** Check our [Troubleshooting Guide](/articles/troubleshooting) or contact support.

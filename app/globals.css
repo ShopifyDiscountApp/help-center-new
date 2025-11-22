@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 17, 24, 39;
+    --background-end-rgb: 17, 24, 39;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background: #1f2937;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #4b5563;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+  }
+}
+
+/* Article Content Styling */
+.article-content .prose {
+  color: #374151;
+}
+
+.article-content .prose h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.article-content .prose h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.article-content .prose p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.75;
+  color: #374151;
+}
+
+.article-content .prose a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.article-content .prose a:hover {
+  color: #1d4ed8;
+}
+
+.article-content .prose strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+.article-content .prose code {
+  color: #2563eb;
+  background-color: #f3f4f6;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-family: 'Courier New', monospace;
+}
+
+.article-content .prose pre {
+  background-color: #1f2937;
+  color: #f3f4f6;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.article-content .prose pre code {
+  background-color: transparent;
+  color: #f3f4f6;
+  padding: 0;
+}
+
+.article-content .prose ul,
+.article-content .prose ol {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.article-content .prose ul {
+  list-style-type: disc;
+}
+
+.article-content .prose ol {
+  list-style-type: decimal;
+}
+
+.article-content .prose li {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+
+.article-content .prose blockquote {
+  border-left: 4px solid #e5e7eb;
+  padding-left: 1rem;
+  font-style: italic;
+  color: #6b7280;
+  margin: 1.5rem 0;
+}
+
+.article-content .prose img {
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  margin: 1.5rem 0;
+}
+
+.article-content .prose table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+}
+
+.article-content .prose th {
+  background-color: #f9fafb;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+}
+
+.article-content .prose td {
+  padding: 0.75rem 1rem;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+}
+
+@media (prefers-color-scheme: dark) {
+  .article-content .prose {
+    color: #d1d5db;
+  }
+
+  .article-content .prose h2,
+  .article-content .prose h3 {
+    color: #f9fafb;
+  }
+
+  .article-content .prose h2 {
+    border-bottom-color: #374151;
+  }
+
+  .article-content .prose p,
+  .article-content .prose li {
+    color: #d1d5db;
+  }
+
+  .article-content .prose a {
+    color: #60a5fa;
+  }
+
+  .article-content .prose a:hover {
+    color: #93c5fd;
+  }
+
+  .article-content .prose strong {
+    color: #f9fafb;
+  }
+
+  .article-content .prose code {
+    color: #60a5fa;
+    background-color: #1f2937;
+  }
+
+  .article-content .prose blockquote {
+    border-left-color: #374151;
+    color: #9ca3af;
+  }
+
+  .article-content .prose img {
+    border-color: #374151;
+  }
+
+  .article-content .prose th {
+    background-color: #1f2937;
+    color: #f9fafb;
+    border-color: #374151;
+  }
+
+  .article-content .prose td {
+    color: #d1d5db;
+    border-color: #374151;
+  }
+}
