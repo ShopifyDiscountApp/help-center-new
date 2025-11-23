@@ -1,5 +1,35 @@
 # https://www.robotstxt.org/robotstxt.html
+# Robots.txt for Shopify Product Options Help Center
+
+# Allow all major search engines
 User-agent: *
 Allow: /
 
+# Disallow specific Next.js and development files
+Disallow: /_next/webpack-hmr
+Disallow: /api/
+
+# Allow crawling of static assets
+Allow: /_next/static/
+Allow: /images/
+
+# Google-specific rules
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Bing-specific rules
+User-agent: Bingbot
+Allow: /
+
+# Crawl-delay for aggressive crawlers (optional)
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+# Sitemap location
 Sitemap: https://help.optionify.co/sitemap.xml

@@ -5,6 +5,9 @@ import TableOfContents from '@/components/article/TableOfContents';
 import RelatedArticles from '@/components/article/RelatedArticles';
 import ArticleNavigation from '@/components/article/ArticleNavigation';
 import FeedbackWidget from '@/components/ui/FeedbackWidget';
+import SocialShare from '@/components/ui/SocialShare';
+import ArticleSchema from '@/components/seo/ArticleSchema';
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import {
   getAllArticleSlugs,
   getArticleBySlug,
@@ -14,6 +17,7 @@ import {
 } from '@/lib/articles';
 import { categories } from '@/lib/categories';
 import { marked } from 'marked';
+import { generateOgMetadata, generateTwitterMetadata, generateCanonicalUrl } from '@/lib/seo-config';
 
 export async function generateStaticParams() {
   const slugs = getAllArticleSlugs();
@@ -26,17 +30,58 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   if (!article) {
     return {
       title: 'Article Not Found',
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
+
+  const category = categories.find((cat) => cat.slug === article.frontmatter.category);
+  const articlePath = `/articles/${params.slug}`;
+
+  // Create Shopify-focused title
+  const shopifyTitle = `${article.frontmatter.title} - Shopify Tutorial`;
 
   return {
     title: article.frontmatter.title,
     description: article.frontmatter.description,
-    openGraph: {
-      title: article.frontmatter.title,
+    keywords: [
+      ...(article.frontmatter.tags || []),
+      'shopify',
+      'shopify tutorial',
+      'shopify guide',
+      'product options',
+      'custom fields',
+    ],
+    authors: [{ name: 'Optionify Team', url: 'https://optionify.co' }],
+    openGraph: generateOgMetadata({
+      title: shopifyTitle,
       description: article.frontmatter.description,
+      path: articlePath,
       type: 'article',
-      publishedTime: article.frontmatter.lastUpdated,
+      publishedTime: new Date(article.frontmatter.lastUpdated).toISOString(),
+      modifiedTime: new Date(article.frontmatter.lastUpdated).toISOString(),
+      section: category?.name,
+      tags: article.frontmatter.tags,
+    }),
+    twitter: generateTwitterMetadata({
+      title: shopifyTitle,
+      description: article.frontmatter.description,
+    }),
+    alternates: {
+      canonical: generateCanonicalUrl(articlePath),
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
   };
 }
@@ -57,18 +102,38 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
   const category = categories.find((cat) => cat.slug === article.frontmatter.category);
 
+  // Breadcrumb items for both UI and schema
+  const breadcrumbItems = [
+    { label: 'Home', href: '/' },
+    { label: 'Articles', href: '/articles' },
+    { label: category?.name || 'Category', href: `/articles/category/${article.frontmatter.category}` },
+    { label: article.frontmatter.title },
+  ];
+
+  // Calculate word count from content
+  const wordCount = article.content.split(/\s+/).length;
+
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="lg:grid lg:grid-cols-12 lg:gap-8">
-        {/* Main Content */}
-        <div className="lg:col-span-9">
-          <Breadcrumb
-            items={[
-              { label: 'Articles', href: '/articles' },
-              { label: category?.name || 'Category', href: `/articles/category/${article.frontmatter.category}` },
-              { label: article.frontmatter.title },
-            ]}
-          />
+    <>
+      {/* Schema.org Structured Data */}
+      <ArticleSchema
+        title={article.frontmatter.title}
+        description={article.frontmatter.description}
+        slug={params.slug}
+        publishedTime={new Date(article.frontmatter.lastUpdated).toISOString()}
+        modifiedTime={new Date(article.frontmatter.lastUpdated).toISOString()}
+        category={category?.name || article.frontmatter.category}
+        tags={article.frontmatter.tags}
+        readingTime={article.readingTime}
+        wordCount={wordCount}
+      />
+      <BreadcrumbSchema items={breadcrumbItems} />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="lg:grid lg:grid-cols-12 lg:gap-8">
+          {/* Main Content */}
+          <div className="lg:col-span-9">
+            <Breadcrumb items={breadcrumbItems.slice(1)} />
 
           {/* Article Header */}
           <article>
@@ -99,6 +164,13 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               />
             </div>
 
+            {/* Social Sharing */}
+            <SocialShare
+              title={article.frontmatter.title}
+              url={`https://help.optionify.co/articles/${params.slug}`}
+              description={article.frontmatter.description}
+            />
+
             {/* Feedback Widget */}
             <FeedbackWidget />
 
@@ -114,7 +186,8 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         <aside className="hidden lg:block lg:col-span-3">
           <TableOfContents items={toc} />
         </aside>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

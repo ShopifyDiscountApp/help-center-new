@@ -3,34 +3,49 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import { siteConfig, generateOgMetadata, generateTwitterMetadata, generateRobots } from '@/lib/seo-config';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  variable: '--font-inter',
+});
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Optionify Help Center - Documentation & Guides',
-    template: '%s | Optionify Help',
+    default: 'Shopify Product Options & Custom Fields Tutorial',
+    template: '%s | Shopify Guide',
   },
-  description: 'Complete documentation and guides for Optionify - the Shopify app for custom product options',
-  keywords: ['Optionify', 'Shopify app', 'product options', 'custom options', 'help center', 'documentation'],
-  authors: [{ name: 'Optionify Team' }],
-  openGraph: {
+  description: 'Learn how to add custom product options, text inputs, file uploads, and unlimited fields to your Shopify store. Complete tutorials for product customization.',
+  keywords: siteConfig.keywords,
+  authors: [{ name: 'Optionify Team', url: 'https://optionify.co' }],
+  creator: 'Optionify',
+  publisher: 'Optionify',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: generateOgMetadata({
+    title: 'Shopify Product Options & Custom Fields Guide',
+    description: 'Learn how to add custom product options, text inputs, file uploads, and unlimited fields to your Shopify store. Complete tutorials for product customization.',
+    path: '/',
     type: 'website',
-    locale: 'en_US',
-    url: 'https://help.optionify.co',
-    siteName: 'Optionify Help Center',
-    title: 'Optionify Help Center - Documentation & Guides',
-    description: 'Complete documentation and guides for Optionify - the Shopify app for custom product options',
+  }),
+  twitter: generateTwitterMetadata({
+    title: 'Shopify Product Options & Custom Fields Guide',
+    description: 'Learn how to add custom product options, text inputs, file uploads, and unlimited fields to your Shopify store. Complete tutorials.',
+  }),
+  robots: generateRobots(),
+  alternates: {
+    canonical: siteConfig.url,
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Optionify Help Center',
-    description: 'Complete documentation and guides for Optionify',
+  verification: {
+    google: 'b21d48e1f68b836a',
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  category: 'technology',
 };
 
 export default function RootLayout({

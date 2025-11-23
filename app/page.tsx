@@ -1,9 +1,31 @@
 import Link from 'next/link';
+import { Metadata } from 'next';
 import { Search, ArrowRight } from 'lucide-react';
 import CategoryCard from '@/components/ui/CategoryCard';
 import ArticleCard from '@/components/article/ArticleCard';
 import { categories } from '@/lib/categories';
 import { getAllArticles, getFeaturedArticles } from '@/lib/articles';
+import OrganizationSchema from '@/components/seo/OrganizationSchema';
+import WebSiteSchema from '@/components/seo/WebSiteSchema';
+import { generateOgMetadata, generateTwitterMetadata } from '@/lib/seo-config';
+
+export const metadata: Metadata = {
+  title: 'Shopify Product Options & Custom Fields Tutorial',
+  description: 'Learn how to add custom product options, text inputs, file uploads, and unlimited fields to your Shopify store. Complete tutorials for product customization.',
+  openGraph: generateOgMetadata({
+    title: 'Shopify Product Options & Custom Fields Tutorial',
+    description: 'Learn how to add custom product options, text inputs, file uploads, and unlimited fields to your Shopify store. Complete tutorials for product customization.',
+    path: '/',
+    type: 'website',
+  }),
+  twitter: generateTwitterMetadata({
+    title: 'Shopify Product Options & Custom Fields Tutorial',
+    description: 'Learn how to add custom product options, text inputs, file uploads, and unlimited fields to your Shopify store.',
+  }),
+  alternates: {
+    canonical: 'https://help.optionify.co',
+  },
+};
 
 export default function HomePage() {
   const allArticles = getAllArticles();
@@ -12,15 +34,20 @@ export default function HomePage() {
     : allArticles.slice(0, 3);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      {/* Hero Section */}
-      <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-          Optionify Help Center
-        </h1>
-        <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-          Everything you need to know about adding custom product options to your Shopify store
-        </p>
+    <>
+      {/* Schema.org Structured Data */}
+      <OrganizationSchema />
+      <WebSiteSchema />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Hero Section */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            Shopify Product Options & Custom Fields Guide
+          </h1>
+          <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+            Learn how to add custom product options, text inputs, file uploads, and unlimited fields to your Shopify store
+          </p>
 
         {/* Search */}
         <div className="max-w-2xl mx-auto">
@@ -102,6 +129,7 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
