@@ -9,8 +9,6 @@ export const siteConfig = {
   appUrl: 'https://apps.shopify.com/optionify',
   description: 'Learn how to add custom product options, text inputs, file uploads, and unlimited fields to your Shopify store. Complete tutorials for product customization and personalization.',
   ogImage: 'https://help.optionify.co/images/og-image.png',
-  twitterHandle: '@optionify',
-  twitterCreator: '@optionify',
   keywords: [
     'shopify product options',
     'shopify custom fields',
@@ -40,8 +38,6 @@ export const organizationSchema = {
   url: 'https://optionify.co',
   logo: 'https://help.optionify.co/images/optionify-logo.png',
   sameAs: [
-    'https://twitter.com/optionify',
-    'https://www.facebook.com/optionify',
     'https://apps.shopify.com/optionify',
   ],
   contactPoint: {
@@ -151,8 +147,6 @@ export function generateTwitterMetadata(params: {
     title: generateTitle(title, false),
     description: generateDescription(description),
     images: [image],
-    creator: siteConfig.twitterCreator,
-    site: siteConfig.twitterHandle,
   };
 }
 
