@@ -6,6 +6,7 @@
 export const siteConfig = {
   name: 'Shopify Product Options Guide',
   url: 'https://help.optionify.co',
+  appUrl: 'https://apps.shopify.com/optionify',
   description: 'Learn how to add custom product options, text inputs, file uploads, and unlimited fields to your Shopify store. Complete tutorials for product customization and personalization.',
   ogImage: 'https://help.optionify.co/images/og-image.png',
   twitterHandle: '@optionify',
@@ -41,6 +42,7 @@ export const organizationSchema = {
   sameAs: [
     'https://twitter.com/optionify',
     'https://www.facebook.com/optionify',
+    'https://apps.shopify.com/optionify',
   ],
   contactPoint: {
     '@type': 'ContactPoint',

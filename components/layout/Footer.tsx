@@ -58,6 +58,16 @@ export default function Footer() {
                   Search
                 </Link>
               </li>
+              <li>
+                <a
+                  href="https://apps.shopify.com/optionify"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-primary-500 hover:text-primary-600 transition-colors font-medium"
+                >
+                  Install App →
+                </a>
+              </li>
             </ul>
           </div>
 

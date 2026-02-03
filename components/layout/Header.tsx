@@ -50,6 +50,14 @@ export default function Header() {
               <Search className="w-4 h-4" />
               <span>Search</span>
             </Link>
+            <a
+              href="https://apps.shopify.com/optionify"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors font-medium"
+            >
+              Install App
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -92,6 +100,14 @@ export default function Header() {
                 <Search className="w-4 h-4" />
                 <span>Search</span>
               </Link>
+              <a
+                href="https://apps.shopify.com/optionify"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors font-medium text-center"
+              >
+                Install App
+              </a>
             </nav>
           </div>
         )}

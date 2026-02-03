@@ -129,6 +129,24 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+
+      {/* Install App CTA */}
+      <section className="mt-16 p-8 bg-gradient-to-r from-primary-500 to-primary-600 rounded-lg text-center">
+        <h2 className="text-3xl font-bold text-white mb-4">
+          Ready to Add Custom Options to Your Store?
+        </h2>
+        <p className="text-primary-50 text-lg mb-6 max-w-2xl mx-auto">
+          Install Optionify from the Shopify App Store and start customizing your products in minutes. 11 option types, unlimited possibilities.
+        </p>
+        <a
+          href="https://apps.shopify.com/optionify"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block px-8 py-4 bg-white text-primary-600 rounded-lg hover:bg-gray-50 transition-colors font-semibold text-lg shadow-lg"
+        >
+          Install Optionify Now
+        </a>
+      </section>
       </div>
     </>
   );
