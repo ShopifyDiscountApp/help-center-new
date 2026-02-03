@@ -48,7 +48,7 @@ export const organizationSchema = {
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer support',
-    email: 'support@optionify.co',
+    email: 'help@optionify.co',
   },
 };
 
