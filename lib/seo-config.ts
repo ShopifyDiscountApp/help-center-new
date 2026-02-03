@@ -4,12 +4,17 @@
  */
 
 export const siteConfig = {
-  name: 'Shopify Product Options Guide',
+  name: 'Optionify Help Center',
   url: 'https://help.optionify.co',
   appUrl: 'https://apps.shopify.com/optionify',
-  description: 'Learn how to add custom product options, text inputs, file uploads, and unlimited fields to your Shopify store. Complete tutorials for product customization and personalization.',
+  description: 'Official Optionify app documentation and tutorials. Learn how to use Optionify to add unlimited custom product options, personalization fields, and custom inputs to your Shopify store.',
   ogImage: 'https://help.optionify.co/images/og-image.png',
   keywords: [
+    'optionify',
+    'optionify app',
+    'optionify shopify',
+    'optionify tutorial',
+    'optionify help',
     'shopify product options',
     'shopify custom fields',
     'shopify text input',

@@ -10,17 +10,17 @@ import WebSiteSchema from '@/components/seo/WebSiteSchema';
 import { generateOgMetadata, generateTwitterMetadata } from '@/lib/seo-config';
 
 export const metadata: Metadata = {
-  title: 'Shopify Product Options & Custom Fields Tutorial',
-  description: 'Learn how to add custom product options, text inputs, file uploads, and unlimited fields to your Shopify store. Complete tutorials for product customization.',
+  title: 'Optionify Help Center - Complete Guide to Product Customization',
+  description: 'Official Optionify app documentation and tutorials. Learn how to use Optionify to add unlimited custom product options, personalization fields, and custom inputs to your Shopify store.',
   openGraph: generateOgMetadata({
-    title: 'Shopify Product Options & Custom Fields Tutorial',
-    description: 'Learn how to add custom product options, text inputs, file uploads, and unlimited fields to your Shopify store. Complete tutorials for product customization.',
+    title: 'Optionify Help Center - Complete Guide to Product Customization',
+    description: 'Official Optionify app documentation and tutorials. Learn how to use Optionify to add unlimited custom product options, personalization fields, and custom inputs to your Shopify store.',
     path: '/',
     type: 'website',
   }),
   twitter: generateTwitterMetadata({
-    title: 'Shopify Product Options & Custom Fields Tutorial',
-    description: 'Learn how to add custom product options, text inputs, file uploads, and unlimited fields to your Shopify store.',
+    title: 'Optionify Help Center - Complete Guide to Product Customization',
+    description: 'Official Optionify app documentation. Learn how to use Optionify to add unlimited custom product options to your Shopify store.',
   }),
   alternates: {
     canonical: 'https://help.optionify.co',
@@ -43,10 +43,10 @@ export default function HomePage() {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Shopify Product Options & Custom Fields Guide
+            Optionify Help Center
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Learn how to add custom product options, text inputs, file uploads, and unlimited fields to your Shopify store
+            Complete guide and documentation for Optionify - Add unlimited custom product options, personalization fields, and custom inputs to your Shopify store
           </p>
 
         {/* Search */}
