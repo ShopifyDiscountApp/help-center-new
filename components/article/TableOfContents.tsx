@@ -33,8 +33,8 @@ export default function TableOfContents({ items }: TableOfContentsProps) {
   if (items.length === 0) return null;
 
   return (
-    <nav className="sticky top-24 p-6 bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700 max-h-[calc(100vh-120px)] overflow-y-auto">
-      <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-4">
+    <nav className="sticky top-24 p-6 bg-white border border-gray-200 rounded-lg max-h-[calc(100vh-120px)] overflow-y-auto">
+      <h4 className="text-sm font-semibold text-gray-900 mb-4">
         Table of Contents
       </h4>
       <ul className="space-y-2">
@@ -47,8 +47,8 @@ export default function TableOfContents({ items }: TableOfContentsProps) {
               href={`#${item.id}`}
               className={`block text-sm transition-colors ${
                 activeId === item.id
-                  ? 'text-primary-600 font-medium dark:text-primary-400'
-                  : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200'
+                  ? 'text-primary-600 font-medium'
+                  : 'text-gray-600 hover:text-gray-900'
               }`}
               onClick={(e) => {
                 e.preventDefault();

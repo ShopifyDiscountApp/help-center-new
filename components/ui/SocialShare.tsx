@@ -35,8 +35,8 @@ export default function SocialShare({ title, url, description }: SocialShareProp
   };
 
   return (
-    <div className="border-t border-b border-gray-200 dark:border-gray-700 py-6 my-8">
-      <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-4">
+    <div className="border-t border-b border-gray-200 py-6 my-8">
+      <h3 className="text-sm font-semibold text-gray-900 mb-4">
         Share this article
       </h3>
       <div className="flex flex-wrap gap-3">
@@ -89,7 +89,7 @@ export default function SocialShare({ title, url, description }: SocialShareProp
         {/* Copy Link */}
         <button
           onClick={copyToClipboard}
-          className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white rounded-lg transition-colors"
+          className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-900 rounded-lg transition-colors"
           aria-label="Copy link to clipboard"
         >
           <Link2 className="w-4 h-4" />

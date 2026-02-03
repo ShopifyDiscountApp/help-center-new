@@ -23,7 +23,7 @@ function CodeBlock({ children, className, ...props }: any) {
 
   if (!language) {
     return (
-      <code className="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-800 text-primary-600 dark:text-primary-400 rounded text-sm font-mono" {...props}>
+      <code className="px-1.5 py-0.5 bg-gray-100 text-primary-600 rounded text-sm font-mono" {...props}>
         {children}
       </code>
     );
@@ -65,7 +65,7 @@ function CodeBlock({ children, className, ...props }: any) {
 function MDXImage(props: any) {
   return (
     <div className="my-6">
-      <div className="relative rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
+      <div className="relative rounded-lg overflow-hidden border border-gray-200">
         <Image
           {...props}
           width={1200}
@@ -75,7 +75,7 @@ function MDXImage(props: any) {
         />
       </div>
       {props.alt && (
-        <p className="mt-2 text-sm text-center text-gray-600 dark:text-gray-400 italic">
+        <p className="mt-2 text-sm text-center text-gray-600 italic">
           {props.alt}
         </p>
       )}
@@ -92,8 +92,8 @@ function createHeading(level: number) {
       : '';
 
     const className = level === 2
-      ? 'text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-4 pb-2 border-b border-gray-200 dark:border-gray-800'
-      : 'text-xl font-semibold text-gray-900 dark:text-white mt-8 mb-3';
+      ? 'text-2xl font-bold text-gray-900 mt-12 mb-4 pb-2 border-b border-gray-200'
+      : 'text-xl font-semibold text-gray-900 mt-8 mb-3';
 
     return (
       <Tag id={id} className={className} {...props}>
@@ -107,32 +107,32 @@ function createHeading(level: number) {
 const components = {
   h2: createHeading(2),
   h3: createHeading(3),
-  p: (props: any) => <p className="my-4 text-gray-700 dark:text-gray-300 leading-relaxed" {...props} />,
-  ul: (props: any) => <ul className="my-4 space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300" {...props} />,
-  ol: (props: any) => <ol className="my-4 space-y-2 list-decimal list-inside text-gray-700 dark:text-gray-300" {...props} />,
+  p: (props: any) => <p className="my-4 text-gray-700 leading-relaxed" {...props} />,
+  ul: (props: any) => <ul className="my-4 space-y-2 list-disc list-inside text-gray-700" {...props} />,
+  ol: (props: any) => <ol className="my-4 space-y-2 list-decimal list-inside text-gray-700" {...props} />,
   li: (props: any) => <li className="ml-4" {...props} />,
   a: (props: any) => (
     <a
-      className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 underline"
+      className="text-primary-500 hover:text-primary-600 underline"
       {...props}
     />
   ),
   blockquote: (props: any) => (
     <blockquote
-      className="my-6 pl-4 border-l-4 border-gray-300 dark:border-gray-700 italic text-gray-700 dark:text-gray-300"
+      className="my-6 pl-4 border-l-4 border-gray-300 italic text-gray-700"
       {...props}
     />
   ),
   table: (props: any) => (
     <div className="my-6 overflow-x-auto">
-      <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700" {...props} />
+      <table className="min-w-full divide-y divide-gray-200" {...props} />
     </div>
   ),
   th: (props: any) => (
-    <th className="px-4 py-2 bg-gray-50 dark:bg-gray-800 text-left text-sm font-semibold text-gray-900 dark:text-white" {...props} />
+    <th className="px-4 py-2 bg-gray-50 text-left text-sm font-semibold text-gray-900" {...props} />
   ),
   td: (props: any) => (
-    <td className="px-4 py-2 text-sm text-gray-700 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700" {...props} />
+    <td className="px-4 py-2 text-sm text-gray-700 border-t border-gray-200" {...props} />
   ),
   code: CodeBlock,
   img: MDXImage,

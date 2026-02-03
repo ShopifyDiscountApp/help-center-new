@@ -26,7 +26,7 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
           <Link
             href="/"
             itemProp="item"
-            className="text-gray-500 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors"
+            className="text-gray-500 hover:text-primary-600 transition-colors"
           >
             <span itemProp="name">Home</span>
           </Link>
@@ -51,13 +51,13 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
                 <Link
                   href={item.href}
                   itemProp="item"
-                  className="text-gray-500 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors"
+                  className="text-gray-500 hover:text-primary-600 transition-colors"
                 >
                   <span itemProp="name">{item.label}</span>
                 </Link>
               ) : (
                 <span
-                  className="text-gray-900 dark:text-white font-medium"
+                  className="text-gray-900 font-medium"
                   itemProp="name"
                   aria-current={isLast ? "page" : undefined}
                 >

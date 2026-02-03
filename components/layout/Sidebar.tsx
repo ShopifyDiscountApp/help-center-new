@@ -23,7 +23,7 @@ export default function Sidebar() {
   };
 
   return (
-    <aside className="w-64 bg-gray-50 border-r border-gray-200 dark:bg-gray-900 dark:border-gray-800 overflow-y-auto">
+    <aside className="w-64 bg-gray-50 border-r border-gray-200 overflow-y-auto">
       <nav className="p-6 space-y-6">
         {categories.map((category) => {
           const isExpanded = expandedCategories.includes(category.slug);
@@ -32,9 +32,9 @@ export default function Sidebar() {
             <div key={category.slug}>
               <button
                 onClick={() => toggleCategory(category.slug)}
-                className="flex items-center justify-between w-full text-left mb-2 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                className="flex items-center justify-between w-full text-left mb-2 hover:text-primary-600 transition-colors"
               >
-                <span className="text-sm font-semibold text-gray-900 dark:text-white">
+                <span className="text-sm font-semibold text-gray-900">
                   {category.name}
                 </span>
                 {isExpanded ? (
@@ -55,8 +55,8 @@ export default function Sidebar() {
                           href={`/articles/${article.slug}`}
                           className={`block py-1.5 px-3 text-sm rounded-lg transition-colors ${
                             isActive
-                              ? 'bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300'
-                              : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200'
+                              ? 'bg-primary-100 text-primary-700'
+                              : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
                           }`}
                         >
                           {article.title}

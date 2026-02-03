@@ -13,10 +13,10 @@ export default function ArticlesPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">
           All Articles
         </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-400">
+        <p className="text-lg text-gray-600">
           Browse all {allArticles.length} articles across all categories
         </p>
       </div>
@@ -33,10 +33,10 @@ export default function ArticlesPage() {
             <div className="flex items-center gap-3 mb-6">
               <span className="text-3xl">{category.icon}</span>
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                <h2 className="text-2xl font-bold text-gray-900">
                   {category.name}
                 </h2>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-gray-600">
                   {category.description}
                 </p>
               </div>

@@ -138,13 +138,13 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           {/* Article Header */}
           <article>
             <header className="mb-8">
-              <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">
                 {article.frontmatter.title}
               </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-xl text-gray-600 mb-4">
                 {article.frontmatter.description}
               </p>
-              <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-500">
+              <div className="flex items-center gap-4 text-sm text-gray-500">
                 <div className="flex items-center gap-1">
                   <Clock className="w-4 h-4" />
                   <span>{article.readingTime}</span>

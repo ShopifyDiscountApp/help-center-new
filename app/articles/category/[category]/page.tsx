@@ -36,14 +36,14 @@ export default function CategoryPage({ params }: { params: { category: string } 
       <div className="mb-12">
         <div className="flex items-center gap-3 mb-4">
           <span className="text-5xl">{category.icon}</span>
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
+          <h1 className="text-4xl font-bold text-gray-900">
             {category.name}
           </h1>
         </div>
-        <p className="text-lg text-gray-600 dark:text-gray-400">
+        <p className="text-lg text-gray-600">
           {category.description}
         </p>
-        <p className="text-sm text-gray-500 dark:text-gray-500 mt-2">
+        <p className="text-sm text-gray-500 mt-2">
           {articles.length} {articles.length === 1 ? 'article' : 'articles'}
         </p>
       </div>
@@ -56,7 +56,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
         </div>
       ) : (
         <div className="text-center py-12">
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-gray-600">
             No articles found in this category yet.
           </p>
         </div>

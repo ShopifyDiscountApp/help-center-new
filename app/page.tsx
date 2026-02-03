@@ -42,10 +42,10 @@ export default function HomePage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Shopify Product Options & Custom Fields Guide
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Learn how to add custom product options, text inputs, file uploads, and unlimited fields to your Shopify store
           </p>
 
@@ -53,10 +53,10 @@ export default function HomePage() {
         <div className="max-w-2xl mx-auto">
           <Link
             href="/search"
-            className="flex items-center gap-3 w-full px-6 py-4 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg hover:border-primary-400 dark:hover:border-primary-600 transition-colors text-left group"
+            className="flex items-center gap-3 w-full px-6 py-4 bg-white border border-gray-300 rounded-lg hover:border-primary-500 transition-colors text-left group"
           >
-            <Search className="w-5 h-5 text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-400" />
-            <span className="text-gray-500 dark:text-gray-400">Search for articles, guides, and answers...</span>
+            <Search className="w-5 h-5 text-gray-400 group-hover:text-primary-500" />
+            <span className="text-gray-500">Search for articles, guides, and answers...</span>
           </Link>
         </div>
       </div>
@@ -65,12 +65,12 @@ export default function HomePage() {
       {featuredArticles.length > 0 && (
         <section className="mb-16">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-bold text-gray-900">
               Featured Articles
             </h2>
             <Link
               href="/articles"
-              className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-medium flex items-center gap-1"
+              className="text-primary-500 hover:text-primary-600 font-medium flex items-center gap-1"
             >
               View all
               <ArrowRight className="w-4 h-4" />
@@ -86,7 +86,7 @@ export default function HomePage() {
 
       {/* Categories */}
       <section>
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">
           Browse by Category
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -107,23 +107,23 @@ export default function HomePage() {
       </section>
 
       {/* Quick Links */}
-      <section className="mt-16 p-8 bg-primary-50 dark:bg-primary-950 rounded-lg border border-primary-200 dark:border-primary-800">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+      <section className="mt-16 p-8 bg-primary-50 rounded-lg border border-primary-200">
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">
           Quick Start
         </h2>
-        <p className="text-gray-700 dark:text-gray-300 mb-6">
+        <p className="text-gray-700 mb-6">
           New to Optionify? Start here to learn the basics and create your first custom product option.
         </p>
         <div className="flex flex-wrap gap-4">
           <Link
             href="/articles/getting-started-with-optionify"
-            className="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-medium"
+            className="px-6 py-3 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors font-medium"
           >
             Get Started
           </Link>
           <Link
             href="/articles/creating-your-first-product-option"
-            className="px-6 py-3 bg-white dark:bg-gray-800 text-primary-600 dark:text-primary-400 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors font-medium border border-primary-200 dark:border-primary-800"
+            className="px-6 py-3 bg-white text-primary-500 rounded-lg hover:bg-gray-50 transition-colors font-medium border border-primary-200"
           >
             Create Your First Option
           </Link>
