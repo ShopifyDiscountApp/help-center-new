@@ -10,11 +10,15 @@ export const siteConfig = {
   description: 'Official Optionify app documentation and tutorials. Learn how to use Optionify to add unlimited custom product options, personalization fields, and custom inputs to your Shopify store.',
   ogImage: 'https://help.optionify.co/images/og-image.png',
   keywords: [
+    // Optionify-specific
     'optionify',
     'optionify app',
     'optionify shopify',
     'optionify tutorial',
     'optionify help',
+    'optionify guide',
+
+    // Shopify product options
     'shopify product options',
     'shopify custom fields',
     'shopify text input',
@@ -23,16 +27,40 @@ export const siteConfig = {
     'add custom fields shopify',
     'shopify product variants',
     'shopify custom options',
-    'shopify file upload',
-    'shopify dropdown options',
-    'shopify checkbox',
-    'shopify radio buttons',
+
+    // Input types
+    'shopify text field',
+    'shopify text input field',
     'shopify date picker',
+    'shopify date selection',
+    'shopify calendar',
+    'shopify radio buttons',
+    'shopify radio options',
+    'shopify checkbox',
+    'shopify dropdown options',
+    'shopify file upload',
     'shopify color picker',
+    'shopify number input',
+    'shopify email field',
+
+    // Use cases
+    'shopify engraving options',
+    'shopify monogram',
+    'shopify personalized products',
+    'shopify custom text',
+    'shopify delivery date',
+    'shopify pickup date',
+    'shopify size selector',
+    'shopify variant selector',
+
+    // General
     'unlimited shopify variants',
     'shopify product builder',
     'shopify custom product',
-    'shopify engraving options',
+    'shopify product options app',
+    'shopify customization app',
+    'shopify validation',
+    'shopify custom error messages',
   ],
 };
 

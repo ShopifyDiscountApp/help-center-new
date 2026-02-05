@@ -40,11 +40,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Article pages
   articles.forEach((article) => {
+    // Calculate priority based on featured status and last update
+    const isRecent = new Date(article.frontmatter.lastUpdated) > new Date(Date.now() - 30 * 24 * 60 * 60 * 1000); // Updated within 30 days
+    const isFeatured = article.frontmatter.featured === true;
+
+    // Priority: Featured + Recent = 0.9, Featured = 0.85, Recent = 0.8, Default = 0.75
+    let priority = 0.75;
+    if (isFeatured && isRecent) {
+      priority = 0.9;
+    } else if (isFeatured) {
+      priority = 0.85;
+    } else if (isRecent) {
+      priority = 0.8;
+    }
+
+    // Change frequency based on last update
+    let changeFrequency: 'weekly' | 'monthly' = 'monthly';
+    if (isRecent) {
+      changeFrequency = 'weekly';
+    }
+
     routes.push({
       url: `${baseUrl}/articles/${article.slug}`,
       lastModified: new Date(article.frontmatter.lastUpdated),
-      changeFrequency: 'weekly',
-      priority: 0.8,
+      changeFrequency,
+      priority,
     });
   });
 

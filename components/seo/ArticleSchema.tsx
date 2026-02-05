@@ -32,9 +32,12 @@ export default function ArticleSchema({
 }: ArticleSchemaProps) {
   const url = `${siteConfig.url}/articles/${slug}`;
 
+  // Determine schema type based on content - use TechArticle for technical documentation
+  const schemaType = title.toLowerCase().includes('how to') ? 'TechArticle' : 'Article';
+
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': schemaType,
     '@id': url,
     headline: title,
     description,
@@ -66,6 +69,23 @@ export default function ArticleSchema({
     ...(readingTime && { timeRequired: readingTime }),
     inLanguage: 'en-US',
     isAccessibleForFree: true,
+    // Additional properties for TechArticle
+    ...(schemaType === 'TechArticle' && {
+      dependencies: 'Shopify store',
+      proficiencyLevel: 'Beginner',
+    }),
+    // Add about property for better context
+    about: {
+      '@type': 'SoftwareApplication',
+      name: 'Optionify',
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web',
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD',
+      },
+    },
   };
 
   return (
